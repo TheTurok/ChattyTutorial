@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/TheTurok/ChattyTutorial/issues"
   },
-  "homepage": "https://github.com/TheTurok/ChattyTutorial#readme"
+  "homepage": "https://github.com/TheTurok/ChattyTutorial#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
 }
