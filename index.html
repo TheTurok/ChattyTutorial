@@ -5,6 +5,7 @@
 	<meta charset="UTF-8">
 	<title>Chatty</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+ 	<link rel="stylesheet" href="main.css" />
 </head>
 
 <body>
@@ -12,9 +13,31 @@
 		<div class = "panel-heading">
 			<span class = "glyphicon glyphicon-user"></span> Online(10)
 		</div>
+		<ul>
+			<li> User 1</li>
+			<li> Dawson Choong </li>
+		</ul>
 	</div>
 
-	<div class = " col-md-2">
-		chat window
+	<div class = "col-md-10">
+		<div id = "livechat-container">
+			<div class ="panel panel-primary">
+				<div class ="panel-heading">
+					Let's Chat!
+				</div>
+				<div class ="panel-body">
+					<ul class = "chat" id = "messages">
+						<li> hey man</li>
+						<li> hey you too</li>
+					</ul>
+				</div>
+
+				<div class = "panel-footer">
+					<form>
+						<input type = "text" class = "form-control input-lg" placeholder = "Type chat here"/>
+					</form>
+				</div>
+			</div>
+		</div>
 	</div>
 </body>
