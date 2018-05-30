@@ -9,13 +9,15 @@
 </head>
 
 <body>
+<div id = "app">
 	<div class = "col-md-2">
 		<div class = "panel-heading">
-			<span class = "glyphicon glyphicon-user"></span> Online(10)
+			<span class = "glyphicon glyphicon-user"></span> Online ({{onlineUsers.length}})
 		</div>
-		<ul>
-			<li> User 1</li>
-			<li> Dawson Choong </li>
+		<ul class = "chat">
+			<li v-for="user in onlineUsers">
+				{{user}}
+			</li>
 		</ul>
 	</div>
 
@@ -23,12 +25,15 @@
 		<div id = "livechat-container">
 			<div class ="panel panel-primary">
 				<div class ="panel-heading">
-					Let's Chat!
+					<span class = "glyphicon glyphicon-comment"></span>&nbsp;Lets Chat
 				</div>
 				<div class ="panel-body">
 					<ul class = "chat" id = "messages">
-						<li> hey man</li>
-						<li> hey you too</li>
+						<li class = "left clearfix">
+							<div class = "info">
+							
+							<div>
+						</li>
 					</ul>
 				</div>
 
@@ -40,4 +45,14 @@
 			</div>
 		</div>
 	</div>
+</div>
+
+
+	<script src = "https://unpkg.com/vue/dist/vue.js"></script>
+	<script src = "client.js"></script>
+	
 </body>
+
+
+
+</html>
