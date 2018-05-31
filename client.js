@@ -1,8 +1,9 @@
+var socket = io();
 
 new Vue({
 	el: '#app',
 	data:{
-		onlineUsers: ["User a", "User b"], 
+		onlineUsers: [], 
 		messages: [],
 		message: {
 			"type": "",
@@ -14,7 +15,10 @@ new Vue({
 		areTyping: []
 	},
 	created: function(){
-
+		//if server emits 'userjoined' then update connected users array
+		socket.on('userjoined',function(socketId){
+			this.onlineUsers.push(socketId);
+		}.bind(this));
 	},
 	methods:{
 		send: function(){
