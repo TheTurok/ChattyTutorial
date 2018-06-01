@@ -29,17 +29,36 @@
 				</div>
 				<div class ="panel-body">
 					<ul class = "chat" id = "messages">
-						<li class = "left clearfix">
-							<div class = "info">
-							
-							<div>
+						<li v-for = "message in messages" class = "left clearfix">
+							<div v-if = "message.type == 'info'" class = "info">
+								{{message.msg}}
+							</div>
+							<div v-if = "message.type == 'chat'"> 
+								<span class = "chat-img pull-left">
+									 <img src="http://placehold.it/50/55C1E7/fff&text=U" alt="User Avatar" class="img-circle" />
+								</span>
+								<div class = "chat-body clearfix">
+									<div class = "header">
+										<strong class="primary=font"> {{message.user}} </strong><small class = "pull-right text-muted">
+									<span class = "glyphicon glyphicon-time"></span>&nbsp; {{message.timestamp}} </small>
+								</div>
+								<p> 
+									{{message.text}}
+								</p>
+
+							</div>
+						</div>
+
+
+
+
 						</li>
 					</ul>
 				</div>
 
 				<div class = "panel-footer">
-					<form>
-						<input type = "text" class = "form-control input-lg" placeholder = "Type chat here"/>
+					<form @submit.prevent="send">
+						<input v-model = "message.text" type = "text" class = "form-control input-lg" placeholder = "Type chat here"/>
 					</form>
 				</div>
 			</div>
@@ -49,6 +68,7 @@
 
 	<script src="/socket.io/socket.io.js"></script>
 	<script src = "https://unpkg.com/vue/dist/vue.js"></script>
+	<script src = "https://unpkg.com/axios/dist/axios.min.js"></script>
 	<script src = "client.js"></script>
 	
 </body>
